@@ -80,7 +80,7 @@ DATABASES = {}
 if os.environ.get('DATABASE_URL', None):
     DATABASES['default'] = dj_database_url.config()
 else:
-    print 'Missing some env. var(s) for database configuration, falling back to sqlite3'
+    print('Missing some env. var(s) for database configuration, falling back to sqlite3')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
