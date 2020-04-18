@@ -18,5 +18,5 @@ from django import urls
 
 urlpatterns = [
     urls.path('admin/', admin.site.urls),
-    urls.path('collator/', urls.include('collator.urls')),
+    urls.path('', urls.include('collator.urls')),
 ]
