@@ -146,7 +146,7 @@ REST_FRAMEWORK = {
 ################################################################################
 # CORS Configuration
 # This application intends to take input from a browser extension which relays
-# flags.
+# flags. 
 ################################################################################
 
 CORS_ORIGIN_WHITELIST = [
