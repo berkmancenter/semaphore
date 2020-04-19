@@ -26,7 +26,10 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['semaphore-staging.herokuapp.com']
+ALLOWED_HOSTS = [
+    'localhost',
+    'semaphore-staging.herokuapp.com'
+]
 
 
 # Application definition
