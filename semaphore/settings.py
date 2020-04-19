@@ -150,5 +150,6 @@ REST_FRAMEWORK = {
 ################################################################################
 
 CORS_ORIGIN_WHITELIST = [
-    'chrome-extension://ldbccokngdpbodjnglnfdnhgjkgobhco',
+    'chrome-extension://ljcdgokipbhhopoinhgndagnbmahgddo',  # Isabelle's
+    'chrome-extension://ldbccokngdpbodjnglnfdnhgjkgobhco',  # John's
 ]
