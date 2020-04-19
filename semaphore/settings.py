@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'semaphore-staging.herokuapp.com'
+    'semaphore-staging.herokuapp.com',
 ]
 
 
@@ -43,9 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'collator',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -140,3 +142,13 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny'
     ]
 }
+
+################################################################################
+# CORS Configuration
+# This application intends to take input from a browser extension which relays
+# flags.
+################################################################################
+
+CORS_ORIGIN_WHITELIST = [
+    'chrome-extension://ldbccokngdpbodjnglnfdnhgjkgobhco',
+]
