@@ -6,7 +6,7 @@ from . import api
 
 
 router = routers.DefaultRouter()
-router.register(r'bazes', api.BazViewSet)
+router.register(r'raw_flags', api.RawFlagViewSet)
 
 
 urlpatterns = [

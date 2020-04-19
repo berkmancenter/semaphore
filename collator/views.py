@@ -4,4 +4,4 @@ from . import models
 
 # Create your views here.
 def index(request):
-    return HttpResponse('{} bazes.'.format(models.Baz.objects.count()))
+    return HttpResponse('{} raw flags.'.format(models.RawFlag.objects.count()))
