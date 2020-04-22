@@ -18,5 +18,6 @@ from django import urls
 
 urlpatterns = [
     urls.path('admin/', admin.site.urls),
+    urls.path('accounts/', urls.include('allauth.urls')),
     urls.path('', urls.include('collator.urls')),
 ]
