@@ -155,7 +155,6 @@ LOGIN_REDIRECT_URL = '/my_flags/'
 # Mailgun config
 ################################################################################
 
-
 EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = os.getenv('MAILGUN_SMTP_LOGIN')
@@ -170,7 +169,7 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny'
+        'rest_framework.permissions.IsAdminUser'
     ]
 }
 
