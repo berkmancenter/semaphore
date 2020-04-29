@@ -1,0 +1,21 @@
+{
+  "name": "HeaderIntercept",
+  "version": "1.0",
+  "description": "Log twitter report headers",
+  "permissions": ["webRequest",
+                  "activeTab",
+                  "https://twitter.com/*",
+                  "storage"
+              ],
+  "background": {
+    "scripts": ["background.js", "urlparse.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "semaphorebasic.png"
+  },
+  "icons": {
+           "48": "semaphorebasic48.png",
+          "128": "semaphorebasic.png" },
+  "manifest_version": 2
+}
