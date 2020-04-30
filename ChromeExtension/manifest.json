@@ -5,7 +5,9 @@
   "permissions": ["webRequest",
                   "activeTab",
                   "https://twitter.com/*",
-                  "storage"
+                  "storage",
+                  "cookies",
+                  "https://semaphore-staging.herokuapp.com/*"
               ],
   "background": {
     "scripts": ["background.js", "urlparse.js"]
