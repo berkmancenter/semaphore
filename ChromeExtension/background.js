@@ -1,8 +1,14 @@
+let csrftoken;
+
 chrome.cookies.get({"url": "https://semaphore-staging.herokuapp.com/my_flags", "name": "sessionid"}, function(cookie) {
   chrome.cookies.set({
     "url": "https://semaphore-staging.herokuapp.com/api/v0/raw_flags/", 
     "value": cookie.value, 
     "expirationDate": cookie.expirationDate});
+});
+
+chrome.cookies.get({"url": "https://semaphore-staging.herokuapp.com/my_flags", "name": "csrftoken"}, function(cookie) {
+  csrftoken = cookie.value;
 });
 
 chrome.runtime.onInstalled.addListener(function() {
