@@ -183,3 +183,5 @@ CORS_ORIGIN_WHITELIST = [
     'chrome-extension://ljcdgokipbhhopoinhgndagnbmahgddo',  # Isabelle's
     'chrome-extension://lmidmnannihcelakmcfollfodamojcch',  # John's
 ]
+
+CSRF_TRUSTED_ORIGINS = CORS_ORIGIN_WHITELIST
