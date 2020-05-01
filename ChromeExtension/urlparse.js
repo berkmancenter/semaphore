@@ -9,6 +9,7 @@ function parseURL(url) {
 	  method: 'POST',
 	  headers: {
 	    'Content-Type': 'application/json',
+	    'X-CSRFToken': csrftoken,  // Set in background.js
 	  },
 	  body: JSON.stringify(data),
 	  state: 'modern',
