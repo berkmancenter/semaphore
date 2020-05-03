@@ -24,13 +24,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if os.environ.get('DJANGO_DEBUG') == 'DEBUG' else False;
 
 ALLOWED_HOSTS = [
     'localhost',
     'semaphore-staging.herokuapp.com',
 ]
 
+X_FRAME_OPTIONS = 'ALLOW-FROM https://semaphoreflagging.squarespace.com/'
 
 # Application definition
 
