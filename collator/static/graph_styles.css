@@ -3,21 +3,24 @@
 	height: 40px;
 }
 
-.graph {
-	height: calc(100% - 40px);
+#graph {
+	height: 200px;
 }
 
 .bar-container {
-	height: 70px;
+	height: 150px;
 	border-bottom: 1px solid gray;
 	margin-bottom: 10px
 }
 
 .day-col {
+	height: 100%;
+}
+
+.col {
 	text-align: center;
 	font-family: sans-serif;
 	display: inline-block;
-	height: 100%;
 	width: calc((100% - 28px) / 14);
 	position: relative;
 	margin: 0 1px 0 1px;
