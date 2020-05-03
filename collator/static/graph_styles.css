@@ -9,7 +9,7 @@
 
 .bar-container {
 	height: 150px;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid rgb(206, 109, 140);
 	margin-bottom: 10px
 }
 
@@ -27,7 +27,7 @@
 }
 
 .bar {
-	background-color: gray;
+	background-color: rgb(206, 109, 140);
 	width: 100%;
 	position: absolute;
 	bottom: 0;
@@ -39,4 +39,6 @@
 	left: 0;
 	top: -16px;
 	content: attr(count);
+	color: rgb(206, 109, 140);
+	font-weight: bold;
 }
