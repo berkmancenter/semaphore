@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+	<head>
+		<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+        <link rel="stylesheet" type="text/css" href="/static/graph_styles.css" >
+	</head>
+	<body>
+		<h1 class='header'>Reports per day</h1>
+		<div id='graph'>
+			<div class="bar-container">
+			{% for day in days %}<div class="day-col">
+				<div class="bar" 
+					 style="height: {{day.count_perc_of_max}}%"
+					 count="{{day.count}}"></div>
+			</div>{% endfor %}
+			</div>
+			{% for day in days %}<div class="day-col">
+				<div class="label">{{day.date|date:"M j"}}</div>
+			</div>{% endfor %}
+		</div>
+	</body>
+</html>
