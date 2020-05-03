@@ -5,6 +5,7 @@
 
 #graph {
 	height: 200px;
+	min-width: calc(14 * (30px + 2px));
 }
 
 .bar-container {
@@ -21,6 +22,7 @@
 	text-align: center;
 	font-family: sans-serif;
 	display: inline-block;
+	min-width: 30px;
 	width: calc((100% - 28px) / 14);
 	position: relative;
 	margin: 0 1px 0 1px;
