@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'collator.middleware.OriginAsRefererMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -137,6 +138,19 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG' if DEBUG else 'INFO',
+    },
+}
 
 ################################################################################
 # All Auth config
@@ -183,3 +197,5 @@ CORS_ORIGIN_WHITELIST = [
     'chrome-extension://ljcdgokipbhhopoinhgndagnbmahgddo',  # Isabelle's
     'chrome-extension://lmidmnannihcelakmcfollfodamojcch',  # John's
 ]
+
+CSRF_TRUSTED_ORIGINS = CORS_ORIGIN_WHITELIST
