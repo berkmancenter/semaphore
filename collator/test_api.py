@@ -8,7 +8,7 @@ from . import models
 
 # if this is changed, the extension also needs an update
 FLAGGING_URL = '/api/v0/raw_flags/'
-CREDENTIALS = {'username': 'flagger', 'password': 'secret'}
+CREDENTIALS = {'username': 'imauser', 'password': 'secret'}
 
 
 class SemaphoreAPITestCase(APITestCase):
@@ -27,7 +27,7 @@ class SemaphoreAPITestCase(APITestCase):
         response = self.client.post(FLAGGING_URL, data, format='json')
         self.assertEqual(response.status_code,  HTTPStatus.FORBIDDEN)
 
-    def test_authenticated_flagging_creates_raw_flag(self):
+    def test_authenticated_flagging_creates_raw_flag_for_flagger(self):
         self.assertEqual(models.RawFlag.objects.count(), 0)
         self.assertTrue(self.client.login(**CREDENTIALS))
         data = {
@@ -38,3 +38,5 @@ class SemaphoreAPITestCase(APITestCase):
         response = self.client.post(FLAGGING_URL, data, format='json')
         self.assertEqual(response.status_code,  HTTPStatus.CREATED)
         self.assertEqual(models.RawFlag.objects.count(), 1)
+        self.assertEqual(models.RawFlag.objects.get().flagger,
+                         User.objects.get())
