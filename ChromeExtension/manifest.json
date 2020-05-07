@@ -1,5 +1,5 @@
 {
-  "name": "HeaderIntercept",
+  "name": "Semaphore",
   "version": "1.0",
   "description": "Log twitter report headers",
   "permissions": ["webRequest",
