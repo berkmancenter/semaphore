@@ -10,6 +10,7 @@ Install dependencies, create a sqlite DB and an admin user account on your local
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py createsuperuser
+python manage.py runserver
 ```
 
 You may need to set an environment variable for DJANGO_SECRET_KEY.  Since it's just a local dev instance, any string value will do fine.
