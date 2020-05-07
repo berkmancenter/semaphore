@@ -197,9 +197,6 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_WHITELIST = [
     'chrome-extension://ljcdgokipbhhopoinhgndagnbmahgddo',  # Isabelle's
     'chrome-extension://lmidmnannihcelakmcfollfodamojcch',  # John's
-    # 'semaphoreflagging.squarespace.com',  # So we can login in an iframe.
 ]
 
 CSRF_TRUSTED_ORIGINS = CORS_ORIGIN_WHITELIST
-CSRF_COOKIE_SAMESITE = None
-SESSION_COOKIE_SAMESITE = None
