@@ -13,15 +13,20 @@ def index(request):
 
 @login_required
 def profile(request):
-    return HttpResponse('Profile for {}.'.format(request.user.username))
+    data = {
+        'days': models.RawFlag.day_histogram(
+            14, 
+            filters={'flagger': request.user}
+        ),
+        'flags': models.RawFlag.objects.filter(
+            flagger=request.user,
+        ).order_by('-created'),
+    }
+    return shortcuts.render(request, 'profile.html', data)
 
 # Graphs
 def reports_per_day(request):
-    # Dummy data
-    num_days = 14
-    max_count = 100
     data = {
-        'max_count': max_count,
         'days': models.RawFlag.day_histogram(14)
     }
     return shortcuts.render(request, 'graphs/reports_per_day.html', data)

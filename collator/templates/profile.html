@@ -1,0 +1,36 @@
+{% extends "registration/base_generic.html" %}
+
+{% load static %}
+
+{% block content %}
+<html>
+	<head>
+		<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+        <link rel="stylesheet" type="text/css" href="/static/graph_styles.css" >
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<h1 class='header'>Reports by {{user.username}}</h1>
+		<div id='graph'>
+			<div class="bar-container">
+			{% for day in days %}<div class="col day-col">
+				<div class="bar" 
+					 style="height: {{day.count_perc_of_max}}%"
+					 count="{{day.count}}"></div>
+			</div>{% endfor %}
+			</div>
+			{% for day in days %}<div class="col">
+				<div class="label">{{day.date|date:"M j"}}</div>
+			</div>{% endfor %}
+		</div>
+
+		{% for flag in flags %}
+			<blockquote class="twitter-tweet">
+				<p lang="en" dir="ltr"></p>
+				<a href="https://twitter.com/{{flag.reported_user_id}}/status/{{flag.reported_tweet_id}}"></a>
+			</blockquote> 
+		{% endfor %}
+	</body>
+</html>
+
+{% endblock %}
