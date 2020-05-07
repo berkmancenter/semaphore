@@ -44,3 +44,19 @@
 	color: rgb(206, 109, 140);
 	font-weight: bold;
 }
+
+.flag-container {
+	display: flex;
+	width: 740px;
+	margin: 0 auto 0 auto;
+}
+
+.flag-meta {
+	font-family: sans-serif;
+	line-height: 1.2rem;
+	border: 1px solid #e1e8ed;
+	border-radius: 5px;
+	margin: 10px;
+	flex-basis: 200px;
+	padding: 20px;
+}
