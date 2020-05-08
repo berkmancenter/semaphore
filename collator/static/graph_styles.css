@@ -40,7 +40,7 @@
 }
 
 .bar {
-	background-color: #54D2D2;
+	background-color: #FF6150;
 	width: 100%;
 	position: absolute;
 	bottom: 0;
@@ -52,7 +52,7 @@
 	left: 0;
 	top: -16px;
 	content: attr(count);
-	color: #54D2D2;
+	color: #FF6150;
 	font-weight: bold;
 }
 
