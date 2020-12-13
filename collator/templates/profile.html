@@ -1,13 +1,16 @@
-{% extends "registration/base_generic.html" %}
-
+{% extends "app_base_generic.html" %}
 {% load static %}
+
+{% block title %}{{user.username}}'s Flags - Semaphore{% endblock %}
+
+{% block head %}
+        <link rel="stylesheet" type="text/css" href="/static/graph_styles.css" >
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endblock %}
 
 {% block content %}
 <html>
 	<head>
-		<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
-        <link rel="stylesheet" type="text/css" href="/static/graph_styles.css" >
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class='page-container'>

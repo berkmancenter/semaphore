@@ -1,7 +1,7 @@
 {
   "name": "Semaphore",
-  "version": "1.0",
-  "description": "Log twitter report headers",
+  "version": "1.1",
+  "description": "Flag and analyze misinformation on Twitter.",
   "permissions": ["webRequest",
                   "activeTab",
                   "https://twitter.com/*",
@@ -14,10 +14,9 @@
   },
   "browser_action": {
     "default_popup": "popup.html",
-    "default_icon": "semaphorebasic.png"
+    "default_icon": "img/semaphore_transparent128.png"
   },
   "icons": {
-           "48": "semaphorebasic48.png",
-          "128": "semaphorebasic.png" },
+          "128": "img/semaphore_transparent128.png" },
   "manifest_version": 2
 }

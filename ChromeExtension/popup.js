@@ -18,8 +18,6 @@ window.onload = function(){
       });
   })};
 
-
-
   togglestatebutton.onclick = function(element) {
     chrome.storage.sync.get('toggle_state', function(is_on) {
       let newstate = !is_on.toggle_state;
