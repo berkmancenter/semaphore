@@ -1,18 +1,3 @@
-.page-container {
-	width: 60%;
-	margin: 0 auto;
-}
-
-.page-header {
-	margin: 20 0;
-	text-align: center;
-}
-
-.header {
-	font-family: sans-serif;
-	height: 40px;
-}
-
 #graph {
 	height: 200px;
 	min-width: calc(14 * (30px + 2px));
@@ -50,24 +35,8 @@
 	position: absolute;
 	height: 16px;
 	left: 0;
-	top: -16px;
+	top: -24px;
 	content: attr(count);
 	color: #FF6150;
 	font-weight: bold;
-}
-
-.flag-container {
-	display: flex;
-	width: 740px;
-	margin: 0 auto 0 auto;
-}
-
-.flag-meta {
-	font-family: sans-serif;
-	line-height: 1.2rem;
-	border: 1px solid #e1e8ed;
-	border-radius: 5px;
-	margin: 10px;
-	flex-basis: 200px;
-	padding: 20px;
 }

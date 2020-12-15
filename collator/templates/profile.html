@@ -4,44 +4,47 @@
 {% block title %}{{user.username}}'s Flags - Semaphore{% endblock %}
 
 {% block head %}
-        <link rel="stylesheet" type="text/css" href="/static/graph_styles.css" >
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="/static/graph_styles.css" >
 {% endblock %}
 
 {% block content %}
-<html>
-	<head>
-	</head>
-	<body>
-		<div class='page-container'>
-			<h1 class='page-header header'>Reports by {{user.username}}</h1>
-			<div id='graph'>
-				<div class="bar-container">
-				{% for day in days %}<div class="col day-col">
-					<div class="bar" 
-						 style="height: {{day.count_perc_of_max}}%"
-						 count="{{day.count}}"></div>
-				</div>{% endfor %}
-				</div>
-				{% for day in days %}<div class="col">
-					<div class="label">{{day.date|date:"M j"}}</div>
-				</div>{% endfor %}
-			</div>
+<section class='section'>
+  <div class='container'>
+    <h1 class='title has-text-centered'>Reports by {{user.username}}</h1>
+    <div id='graph'>
+      <div class="bar-container">
+      {% for day in days %}<div class="col day-col">
+        <div class="bar" 
+             style="height: {{day.count_perc_of_max}}%"
+             count="{{day.count}}"></div>
+      </div>{% endfor %}
+      </div>
+      {% for day in days %}<div class="col">
+        <div class="label">{{day.date|date:"M j"}}</div>
+      </div>{% endfor %}
+    </div>
 
-			{% for flag in flags %}
-			<div class="flag-container">
-				<div class="flag-meta">
-					<b>Flagged by:</b> <span>{{flag.flagger.username}}</span>
-					<b>Flagged on:</b> <span>{{flag.created}}</span>
-				</div>
-				<blockquote class="twitter-tweet">
-					<p lang="en" dir="ltr"></p>
-					<a href="https://twitter.com/{{flag.reported_user_id}}/status/{{flag.reported_tweet_id}}"></a>
-				</blockquote> 
-			</div>
-			{% endfor %}
-		</div>
-	</body>
-</html>
+    {% for flag in flags %}
+    <div class="box">
+      <div class="columns">
+        <div class="column is-one-third is-flex is-align-items-center">
+          <div class="flag-metadata">
+            <p><b>Flagged by:</b> <span>{{flag.flagger.username}}</span></p>
+            <p><b>Flagged on:</b> <span>{{flag.created}}</span></p>
+          </div>
+        </div>
+        <div class="column is-two-thirds is-align-items-center">
+          <div class="is-flex is-justify-content-center">
+            <blockquote class="twitter-tweet m-4">
+              <p>Attempting to load <a href="https://twitter.com/{{flag.reported_user_id}}/status/{{flag.reported_tweet_id}}">tweet</a>.</p>
+            </blockquote> 
+          </div>
+        </div>
+      </div>  
+    </div>
+    {% endfor %}
+  </div>
+</section>
 
 {% endblock %}
